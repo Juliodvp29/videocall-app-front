@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuBottomComponent implements OnInit {
 
+  menu: Array<any> = [
+    {name: 'Muted', icon: 'uil uil-microphone'},
+    {name: 'Home', icon: 'uil uil-estate'},
+    {name: 'Share', icon: 'uil uil-share'},
+  ];
+  
   constructor() { }
 
   ngOnInit(): void {
