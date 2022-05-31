@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PeerService } from 'src/app/services/peer.service';
+import { WebSocketService } from 'src/app/services/web-socket.service';
 
 
 @Component({
@@ -8,10 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomComponent implements OnInit {
 
+  roomName: string = '';
   listUser: Array<any> = [];
   currentStream: any;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private webSocketService: WebSocketService,
+    private peerService: PeerService
+  ) { }
 
   ngOnInit(): void {
     this.checkMediaDevices();
