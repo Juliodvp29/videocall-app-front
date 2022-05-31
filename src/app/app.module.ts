@@ -7,6 +7,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { RoomComponent } from './pages/room/room.component';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
 import { MenuBottomComponent } from './components/menu-bottom/menu-bottom.component';
+import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {withCredentials: false} };
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { MenuBottomComponent } from './components/menu-bottom/menu-bottom.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
